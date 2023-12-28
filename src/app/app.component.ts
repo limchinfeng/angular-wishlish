@@ -1,6 +1,5 @@
 import { Component, TemplateRef } from '@angular/core';
 import { WishItem } from '../shared/models/wishitem';
-import { NgIfContext } from '@angular/common';
 
 const filters = [
   (item : WishItem) => item,
