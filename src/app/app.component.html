@@ -6,14 +6,14 @@
 
   <div class="row mt-3">
     <wish-filter
-      (filter)="filter = $event"
+      [(filter)]="filter"
     ></wish-filter>
   </div>
 
  <!-- list of wish -->
   <div class="row mt-3">
     <wish-list
-      [wishes]="visibleItems"
+      [wishes]="items.filter(filter)"
     ></wish-list>
   </div>
 </div>

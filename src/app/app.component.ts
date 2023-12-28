@@ -14,10 +14,7 @@ export class AppComponent {
   ];
   title = 'angularWishlist';
 
-  filter: any = () => {}
-  get visibleItems() : WishItem[] {
-    return this.items.filter(this.filter)
-  }
+  filter: any;
 
   toggleItem(item: WishItem) {
     item.isComplete = !item.isComplete;
