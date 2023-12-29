@@ -10,7 +10,7 @@ import { WishService } from './wish.service';
 })
 export class AppComponent implements OnInit {
   title="";
-  items! : WishItem[];
+  items : WishItem[] = [];
   
   constructor(events: EventService, private wishService: WishService) {
     events.listen('removeWish', (wish : any) => {
@@ -20,9 +20,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.wishService.getWishes().subscribe((data: any) => {
-      this.items = data;
-    })
+    this.wishService.getWishes().subscribe(
+      (data: any) => {
+        this.items = data;
+      },
+      (error: any) => {
+        alert(error.message);
+      }
+    )
   }
 
   filter: any;
